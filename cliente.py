@@ -17,7 +17,20 @@ def get_item():
     response = requests.get(URL_BASE + "/item", params={"id":"ajsdh"})
     print("Resultado:", response.json())                               
 
+def post_usuario():
+    response = requests.post(URL_BASE + "/usuario",
+                              json={
+                                "nombre": "Abdul", 
+                                "apellido": "Galindo",
+                                "edad": 36,
+                                "favoritos":[]
+                            })
+    print(response.json())
+
+
+
 if __name__ == "__main__":
     #get_usuario()
     #put_favorito()
-    get_item()
+    #get_item()
+    post_usuario()
